@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky Digital Identity - Sangar</title>
+    <style>
+        /* TEMA PINK LUCU & AESTHETIC */
+        body {
+            font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+            background-color: #ffe4e1; /* Misty Rose */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #d63384;
+        }
+
+        .main-container {
+            background: #fff0f5; /* Lavender Blush */
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            border: 4px dashed #ffb6c1;
+        }
+
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        p.subtitle { font-size: 14px; margin-bottom: 25px; color: #ff69b4; }
+
+        /* MENU PILIHAN (HOME) */
+        .menu-pilihan {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-pilih {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 5px 0 #ffb6c1;
+        }
+
+        .btn-febby { background-color: #ffc0cb; color: #fff; }
+        .btn-andre { background-color: #ff85a2; color: #fff; }
+
+        .btn-pilih:hover { transform: translateY(3px); box-shadow: 0 2px 0 #ffb6c1; }
+
+        /* BAGIAN BIODATA (DISEMBUNYIKAN DULU) */
+        .bio-content {
+            display: none; /* Rahasia: disembunyikan */
+            animation: popIn 0.5s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Ini yang bikin lingkaran */
+    object-fit: cover;
+    border: 6px solid #FFC0CB; /* Frame pink */
+    display: block;
+    margin: 10px auto;
+}
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            border: 2px solid #ffc0cb;
+        }
+
+        .btn-back {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff1493;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div id="home">
+            <h1>🎀 Welcome to our digital identity 🎀</h1>
+            <p class="subtitle">Pick your name & meet your digital self 🌸</p>
+            <div class="menu-pilihan">
+                <button class="btn-pilih btn-febby" onclick="showBio('febby')">Febby ✨</button>
+                <button class="btn-pilih btn-andre" onclick="showBio('andre')">Andre ⚓</button>
+            </div>
+        </div>
+
+        <div id="febby" class="bio-content">
+            <img src="b.jpeg" class="profile-img">
+            <h2>Welcome! 💖
+I’m Febby, and this is my digital personal data space.</h2>
+            <div class="card">
+                <p><b>Hobi:</b> Ngoding & Desain Lucu</p>
+                <p><b>Skill:</b> HTML, CSS, Canva</p>
+                <a href="https://www.instagram.com/febbyanggrn_?igsh=MW1qZ2s5cmQxeWd0aQ%3D%3D&utm_source=qr" class="social-link">Instagram ↗</a>
+<br>
+<a href="https://www.tiktok.com/@loadingpersonn?_r=1&_t=ZS-93dtUjLJWxo" class="social-link" style="color: #000;">TikTok 🎵</a>
+            </div>
+            <button class="btn-back" onclick="goHome()">Kembali 🏠</button>
+        </div>
+
+        <div id="andre" class="bio-content">
+            <img src="a.jpeg" class="profile-img">
+            <h2>Hey there 😎
+Welcome to Andre’s personal data—simple, clean, and straight to the point.</h2>
+            <div class="card">
+                <p><b>Hobi:</b> Gaming & Analisis Data</p>
+                <p><b>Skill:</b> Office, Algoritma, UI/UX</p>
+                <a href="https://www.instagram.com/andrewijj_?igsh=MW1nbXQwd2luZzl6OA==" class="social-link">Instagram ↗</a>
+<br>
+<a href="https://www.tiktok.com/@andree.kun?_r=1&_t=ZS-93fSRzNWjVx" class="social-link" style="color: #000;">TikTok 🎵</a>
+            </div>
+            <button class="btn-back" onclick="goHome()">Kembali 🏠</button>
+        </div>
+
+    </div>
+
+    <script>
+        function showBio(nama) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('febby').style.display = 'none';
+            document.getElementById('andre').style.display = 'none';
+            document.getElementById(nama).style.display = 'block';
+        }
+
+        function goHome() {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('febby').style.display = 'none';
+            document.getElementById('andre').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
